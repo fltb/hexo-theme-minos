@@ -1,3 +1,5 @@
+**Since Minos' repository has been archived by the owner on Jun 4, 2022, I had to maintain it on my own.**
+
 <p align="center">
 <img height="40" src="https://ppoffice.github.io/hexo-theme-minos/images/logo.png">
 <br> A simple and retro styled Hexo theme, concentrating more on your ideas.
@@ -29,6 +31,7 @@ blog experience, or build your own plugin easily referring to the existing Minos
         <td><a href="https://livere.com/">LiveRe</a></td>
         <td><a href="https://github.com/xCss/Valine">Valine</a></td>
         <td><a href="http://www.uyan.cc/">Youyan</a></td>
+        <td><a href="https://giscus.app/">Giscus</a></td>
     </tr>
 </table>
 <table>

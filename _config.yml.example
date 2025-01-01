@@ -45,8 +45,11 @@ share:
 
 # Comment plugin settings.
 comment:
-  type: disqus
-  shortname:
+  type: giscus
+  repo: foo/bar
+  repo-id: ID_a1B2c3d4E5
+  category: Announcements
+  category-id: ID_a1B2c3d4E5
 
 # Other plugins and their settings.
 plugins:
@@ -54,6 +57,7 @@ plugins:
   katex: false
   gallery: true
   clipboard: true
+  busuanzi: true  # Toggle for Busuanzi visitor counter
   google-analytics:
     tracking_id:
 
@@ -69,3 +73,9 @@ navbar_links:
 # Links at the bottom of the page.
 footer_links:
   GitHub: https://github.com/ppoffice/hexo-theme-minos
+
+footer:
+  enable_cc_license: true  # Toggle for CC license information
+  license:
+    name: "CC BY-NC-SA 4.0"  # License name to display
+    url: "http://creativecommons.org/licenses/by-nc-sa/4.0/"  # Link to the license
