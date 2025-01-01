@@ -3,7 +3,17 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const altConfigs = {};
+
+// project/theme/minos/scripts => project
+const hexoRoot = path.join(__dirname, '..', '..', '..')
+// project/theme/minos/scripts => project/theme/minos
 const themeRoot = path.join(__dirname, '..');
+
+function getThemeName() {
+    const themeDir = hexo.theme_dir; // Absolute path to the current theme directory
+    const themeName = themeDir.split('/').filter(Boolean).pop(); // Extract the theme name
+    return themeName;
+}
 
 /**
  * Theme configuration helper.
@@ -11,7 +21,7 @@ const themeRoot = path.join(__dirname, '..');
 function getConfig(config, path) {
     const paths = path.split('.');
     for (let path of paths) {
-        if (typeof(config) === 'undefined' || config === null || !config.hasOwnProperty(path)) {
+        if (typeof (config) === 'undefined' || config === null || !config.hasOwnProperty(path)) {
             return null;
         }
         config = config[path];
@@ -28,7 +38,10 @@ function getConfig(config, path) {
 function getThemeConfig(lang = null) {
     if (lang) {
         if (!altConfigs.hasOwnProperty(lang)) {
-            const configPath = path.join(themeRoot, '_config.' + lang + '.yml');
+            let configPath = path.join(hexoRoot, '_config.' + getThemeName() + '.' + lang + '.yml');
+            if (!fs.existsSync(configPath)) {
+                configPath = path.join(themeRoot, '_config.' + lang + '.yml');
+            }
             if (fs.existsSync(configPath)) {
                 const config = yaml.load(fs.readFileSync(configPath));
                 if (config != null) {

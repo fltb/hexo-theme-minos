@@ -115,6 +115,8 @@ Minos supports the using of multiple translations on different pages in one site
 Simply decide your preferred language for each page (or use the [language folder](https://hexo.io/docs/internationalization.html#Path)) 
 and create an additional `_config.<language shortname>.yml`, then you are ready to go.
 
+You can use [dedicated config file](https://hexo.io/docs/configuration.html#Alternate-Theme-Config) like `_config.<theme name>.<language shortname>.yml` in your site folder instead of theme folder, too.
+
 **Responsive Layout**
 
 No matter what modern browsering device your audiences are using, they can always get the best experience because Minos's responsive

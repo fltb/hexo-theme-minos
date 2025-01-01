@@ -15,7 +15,7 @@ function checkDependency(name) {
     try {
         require.resolve(name);
         return true;
-    } catch(e) {
+    } catch (e) {
         logger.error(`Package ${name} is not installed.`)
     }
     return false;
@@ -42,12 +42,23 @@ if (missingDeps) {
     process.exit(-1);
 }
 
+// project/theme/minos/scripts => project
+const hexoRoot = path.join(__dirname, '..', '..', '..')
+// project/theme/minos/scripts => project/theme/minos
 const themeRoot = path.join(__dirname, '..');
+
+function getThemeName() {
+    const themeDir = hexo.theme_dir; // Absolute path to the current theme directory
+    const themeName = themeDir.split('/').filter(Boolean).pop(); // Extract the theme name
+    return themeName;
+}
+
+const mainConfigAtRootPath = path.join(hexoRoot, '_config.' + getThemeName() + '.yml');
 const mainConfigPath = path.join(themeRoot, '_config.yml');
 
 logger.info('Checking if the configuration file exists');
-if (!fs.existsSync(mainConfigPath)) {
-    logger.warn(`${mainConfigPath} is not found. Please create one from the template _config.yml.example.`)
+if (!fs.existsSync(mainConfigAtRootPath) && !fs.existsSync(mainConfigPath)) {
+    logger.warn(`${mainConfigPath} and ${mainConfigAtRootPath} are not found. Please create one from the template _config.yml.example.`)
 }
 
 const { getUsedLanguages, getDisplayLanguages, isLanguageValid } = require('../lib/i18n')(hexo);
