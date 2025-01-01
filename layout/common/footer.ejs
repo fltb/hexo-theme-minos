@@ -2,29 +2,58 @@
     <div class="container">
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
-                &copy; <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
-                <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                <% if (get_config('plugins.busuanzi')) { %>
+                <div class="busuanzi-count">
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <div class="post-meta-item" id="busuanzi_container_site_uv" style="display: inline;">
+                        <span class="post-meta-item-icon">
+                            <i class="fa fa-user"></i>
+                        </span>
+                        <span class="site-uv" title="Total Visitors">
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </div>
+                    <div class="post-meta-item" id="busuanzi_container_site_pv" style="display: inline;">
+                        <span class="post-meta-item-icon">
+                            <i class="fa fa-eye"></i>
+                        </span>
+                        <span class="site-pv" title="Total Visitors">
+                            <span id="busuanzi_value_site_pv"></span>
+                        </span>
+                    </div>
+                </div>
+                <% } %>
+                &copy; <%= date(new Date(), 'YYYY' ) %>
+                    <%= get_config('author') || get_config('title') %>&nbsp;
+                        <br />
+                        <% if (get_config('footer.enable_cc_license')) { %>
+                            This site is licensed under <a rel="license" href="<%= get_config('footer.license.url') %>">
+                                <%= get_config('footer.license.name') %>
+                            </a>.
+                        <% } %>
+                    <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                                href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+
             </div>
             <div class="column is-hidden-mobile"></div>
-
             <% if (has_config('footer_links')) { %>
-            <div class="column is-narrow">
-                <div class="columns is-mobile is-multiline is-centered">
-                <% for (let name in get_config('footer_links')) { %>
-                    <% let link = get_config('footer_links')[name]; %>
-                <a class="column is-narrow has-text-black" title="<%= name %>" href="<%= typeof(link) === 'string' ? link : link.url%>">
-                    <% if (typeof(link) === 'string') { %>
-                    <%= name %>
-                    <% } else { %>
-                    <i class="<%= link.icon %>"></i>
-                    <% } %>
-                </a>
-                <% } %>
+                <div class="column is-narrow">
+                    <div class="columns is-mobile is-multiline is-centered">
+                        <% for (let name in get_config('footer_links')) { %>
+                            <% let link=get_config('footer_links')[name]; %>
+                            <a class="column is-narrow has-text-black" title="<%= name %>"
+                                href="<%= typeof(link) === 'string' ? link : link.url%>">
+                                <% if (typeof(link) === 'string') { %>
+                                    <%= name %>
+                                <% } else { %>
+                                    <i class="<%= link.icon %>"></i>
+                                <% } %>
+                            </a>
+                        <% } %>
+                    </div>
                 </div>
-            </div>
-            <% } %>
-            <%- partial('common/languages') %>
+                <% } %>
+                <%- partial('common/languages') %>
         </div>
     </div>
 </footer>
