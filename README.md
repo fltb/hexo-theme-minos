@@ -5,11 +5,11 @@
 <br> A simple and retro styled Hexo theme, concentrating more on your ideas.
 <br>
 <a href="https://ppoffice.github.io/hexo-theme-minos/"><b>Preview</b></a> | 
-<a href="https://github.com/ppoffice/hexo-theme-minos/archive/master.zip"><b>Download</b></a> |
-<a href="http://ppoffice.github.io/hexo-theme-minos/categories/Documentation/"><b>Documentation</b></a>
+<a href="https://github.com/fltb/hexo-theme-minos/archive/master.zip"><b>Download</b></a> |
+<a href="https://ppoffice.github.io/hexo-theme-minos/categories/Documentation/"><b>Documentation</b></a>
 </p>
 
-![Minos](http://ppoffice.github.io/hexo-theme-minos/gallery/preview.png "Minos Preview")
+![Minos](https://ppoffice.github.io/hexo-theme-minos/gallery/preview.png "Minos Preview")
 
 ### :gift: Features
 
