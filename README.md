@@ -136,7 +136,7 @@ Once started, Minos will remind you of any missing dependencies and configuratio
 
 This project is built with
 
-- Hexo 3.6.0
+- Hexo 7.0.0
 - Ejs
 - Sass
 
