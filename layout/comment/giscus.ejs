@@ -1,0 +1,22 @@
+<% if (!has_config('comment.repo') || !has_config('comment.repo-id') || !has_config('comment.category') || !has_config('comment.category-id')) { %>
+    <div class="notification is-danger">
+        You forgot to set the <code>appid</code> or <code>conf</code> for giscus. Please set it in
+        <code>_config.yml</code>.
+    </div>
+    <% } else { %>
+        <script src="https://giscus.app/client.js"
+        data-repo="<%= get_config('comment.repo') %>"
+        data-repo-id="<%= get_config('comment.repo-id') %>"
+        data-category="<%= get_config('comment.category') %>"
+        data-category-id="<%= get_config('comment.category-id') %>"
+        data-mapping="pathname"
+        data-strict="1"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+        <% } %>
