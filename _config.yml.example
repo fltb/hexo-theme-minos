@@ -57,7 +57,6 @@ plugins:
   katex: false
   gallery: true
   clipboard: true
-  busuanzi: true  # Toggle for Busuanzi visitor counter
   google-analytics:
     tracking_id:
 
@@ -75,6 +74,7 @@ footer_links:
   GitHub: https://github.com/ppoffice/hexo-theme-minos
 
 footer:
+  enable_busuanzi: true  # Toggle for Busuanzi visitor counter
   enable_cc_license: true  # Toggle for CC license information
   license:
     name: "CC BY-NC-SA 4.0"  # License name to display
