@@ -1,4 +1,4 @@
-**Since Minos' repository has been archived by the owner on Jun 4, 2022, I had to maintain it on my own.**
+**Since Minos' repository has been archived by the owner on Jun 4, 2022, I had to maintain it on my own. Original repo: <https://github.com/ppoffice/hexo-theme-minos>**
 
 <p align="center">
 <img height="40" src="https://ppoffice.github.io/hexo-theme-minos/images/logo.png">
