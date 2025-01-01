@@ -1,4 +1,5 @@
-/* FOSS Fonts */
+@use "sass:color";
+@use "sass:meta";
 $family-serif: "Libre Baskerville", "Georgia", "STZhongsong", "Noto Serif", serif;
 $family-mono: "Fira Code", "Source Code Pro", "Noto Sans Mono", monospace;
 $border-color: #dbdbdb;
@@ -200,7 +201,7 @@ a.tag.article-tag {
 
             &.info {
                 border-color: hsl(204, 86%, 53%);
-                background-color: lighten(hsl(204, 86%, 53%), 40%);
+                background-color: color.adjust(hsl(204, 86%, 53%), $lightness: 40%);
 
                 &:before {
                     background-color: hsl(204, 86%, 53%);
@@ -210,7 +211,7 @@ a.tag.article-tag {
 
             &.success {
                 border-color: hsl(141, 71%, 48%);
-                background-color: lighten(hsl(141, 71%, 48%), 40%);
+                background-color: color.adjust(hsl(141, 71%, 48%), $lightness: 40%);
 
                 &:before {
                     background-color: hsl(141, 71%, 48%);
@@ -220,7 +221,7 @@ a.tag.article-tag {
 
             &.warning {
                 border-color: hsl(48, 100%, 67%);
-                background-color: lighten(hsl(48, 100%, 67%), 24%);
+                background-color: color.adjust(hsl(48, 100%, 67%), $lightness: 24%);
 
                 &:before {
                     background-color: hsl(48, 100%, 67%);
@@ -230,7 +231,7 @@ a.tag.article-tag {
 
             &.danger {
                 border-color: hsl(348, 100%, 61%);
-                background-color: lighten(hsl(348, 100%, 61%), 24%);
+                background-color: color.adjust(hsl(348, 100%, 61%), $lightness: 24%);
 
                 &:before {
                     background-color: hsl(348, 100%, 61%);
@@ -632,4 +633,4 @@ figure.highlight {
     }
 }
 
-@import "insight";
+@include meta.load-css("insight");
