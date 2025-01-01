@@ -20,7 +20,7 @@ blog experience, or build your own plugin easily referring to the existing Minos
 
 <table>
     <tr>
-        <th colspan="8">Comment plugins</th>
+        <th colspan="9">Comment plugins</th>
     </tr>
     <tr>
         <td><a href="http://changyan.kuaizhan.com/">Changyan</a></td>
