@@ -59,3 +59,14 @@ if (languages.length > 1) {
     <%- partial('plugins/' + plugin, {head: true}) %>
     <% } %>
 <% } %>
+
+<% if (get_config('float-monkey-patch-style.enable')) { %>
+    <style>
+        html {
+            background-color: <%= get_config('float-monkey-patch-style.background-color') || "#ebe7dc"  %>;
+        }
+        .navbar-main {
+            background-color: <%= get_config('float-monkey-patch-style.background-color') || "#ebe7dc"  %>;
+        }
+    </style>
+<% } %>    
