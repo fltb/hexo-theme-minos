@@ -39,7 +39,7 @@ function patchCodeHighlight(content) {
             $(this).removeClass(classes[0]);
         }
     });
-    return $.html();
+    return $('body').html();
 }
 
 /**
